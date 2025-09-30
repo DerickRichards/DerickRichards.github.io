@@ -1,41 +1,55 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>MY PORTFOLIO</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      background: linear-gradient(135deg, #1e3c72, #2a5298);
-      color: white;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      height: 100vh;
-      margin: 0;
-    }
-    h1 {
-      font-size: 3rem;
-      margin-bottom: 0.5rem;
-    }
-    p {
-      font-size: 1.2rem;
-    }
-    a {
-      color: #ffd700;
-      text-decoration: none;
-      font-weight: bold;
-    }
-    a:hover {
-      text-decoration: underline;
-    }
-  </style>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <h1>Hello there, this is Derick Richards</h1>
-  <p>Welcome to my GitHub Pages site</p>
-  <p><a href="https://github.com/DerickRichards">Check out my projects</a></p>
+  <header>
+    <nav>
+      <ul>
+        <li><a href="#about">About</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section id="about">
+    <h1>Hello there, I'm DerickRichards</h1>
+    <p>Welcome to my portfolio! I'm passionate about coding, design, and building impactful projects.</p>
+  </section>
+
+  <section id="projects">
+    <h2>Projects</h2>
+    <div class="project-grid">
+      <div class="card">
+        <h3>Project One</h3>
+        <p>Short description of what it does.</p>
+      </div>
+      <div class="card">
+        <h3>Project Two</h3>
+        <p>Short description of what it does.</p>
+      </div>
+      <div class="card">
+        <h3>Project Three</h3>
+        <p>Short description of what it does.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact">
+    <h2>Contact</h2>
+    <p>Let’s connect:</p>
+    <a href="mailto:aprelrichards7@gmail.com">Email</a> |
+    <a href="https://github.com/DerickRichards">GitHub</a> |
+    <a href="https://linkedin.com/in/DerickRichards">LinkedIn</a>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 Aprel. Built with ❤️ and GitHub Pages.</p>
+  </footer>
 </body>
 </html>
