@@ -3,53 +3,170 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>MY PORTFOLIO</title>
+  <title>DerickRichards | Full Stack Developer</title>
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <header>
-    <nav>
+  <div class="bg-animation"></div>
+
+  <!-- Navigation -->
+  <nav id="navbar">
+    <div class="container">
+      <div class="logo">DR</div>
       <ul>
-        <li><a href="#about">About</a></li>
+        <li><a href="#home">Home</a></li>
+        <li><a href="#skills">Skills</a></li>
         <li><a href="#projects">Projects</a></li>
         <li><a href="#contact">Contact</a></li>
       </ul>
-    </nav>
-  </header>
+    </div>
+  </nav>
 
-  <section id="about">
-    <h1>Hello there, I'm DerickRichards</h1>
-    <p>Welcome to my portfolio! I'm passionate about coding, design, and building impactful projects.</p>
-  </section>
-
-  <section id="projects">
-    <h2>Projects</h2>
-    <div class="project-grid">
-      <div class="card">
-        <h3>Project One</h3>
-        <p>Short description of what it does.</p>
+  <!-- Hero Section -->
+  <section class="hero" id="home">
+    <div class="hero-content">
+      <div class="hero-text">
+        <h1>
+          Hi, I'm <span class="gradient-text">Derick Richards</span>
+        </h1>
+        <div class="subtitle">Full Stack Developer & UI/UX Enthusiast</div>
+        <p>
+          I craft elegant digital experiences through clean code and intuitive design. 
+          Specialized in building scalable web applications that solve real-world problems 
+          and delight users.
+        </p>
+        <div class="cta-buttons">
+          <a href="#projects" class="btn btn-primary">View My Work</a>
+          <a href="#contact" class="btn btn-secondary">Get In Touch</a>
+        </div>
       </div>
-      <div class="card">
-        <h3>Project Two</h3>
-        <p>Short description of what it does.</p>
-      </div>
-      <div class="card">
-        <h3>Project Three</h3>
-        <p>Short description of what it does.</p>
+      <div class="hero-image">
+        <div class="profile-wrapper">
+          <div class="profile-bg"></div>
+          <div class="profile-image">DR</div>
+        </div>
       </div>
     </div>
   </section>
 
-  <section id="contact">
-    <h2>Contact</h2>
-    <p>Let’s connect:</p>
-    <a href="mailto:aprelrichards7@gmail.com">Email</a> |
-    <a href="https://github.com/DerickRichards">GitHub</a> |
-    <a href="https://linkedin.com/in/DerickRichards">LinkedIn</a>
+  <!-- Skills Section -->
+  <section class="skills" id="skills">
+    <div class="container">
+      <h2 class="section-title">Tech <span class="gradient-text">Stack</span></h2>
+      <div class="skills-grid">
+        <div class="skill-card fade-in">
+          <div class="skill-icon">⚛️</div>
+          <h3>React</h3>
+        </div>
+        <div class="skill-card fade-in" style="animation-delay: 0.1s">
+          <div class="skill-icon">📦</div>
+          <h3>Node.js</h3>
+        </div>
+        <div class="skill-card fade-in" style="animation-delay: 0.2s">
+          <div class="skill-icon">🎨</div>
+          <h3>UI/UX Design</h3>
+        </div>
+        <div class="skill-card fade-in" style="animation-delay: 0.3s">
+          <div class="skill-icon">🗄️</div>
+          <h3>SQL/NoSQL</h3>
+        </div>
+        <div class="skill-card fade-in" style="animation-delay: 0.4s">
+          <div class="skill-icon">☁️</div>
+          <h3>Cloud Services</h3>
+        </div>
+        <div class="skill-card fade-in" style="animation-delay: 0.5s">
+          <div class="skill-icon">🔧</div>
+          <h3>DevOps</h3>
+        </div>
+      </div>
+    </div>
   </section>
 
+  <!-- Projects Section -->
+  <section class="projects" id="projects">
+    <div class="container">
+      <h2 class="section-title">Featured <span class="gradient-text">Projects</span></h2>
+      <div class="projects-grid">
+        <div class="project-card">
+          <div class="project-header">
+            <h3>🎯 FEmentor</h3>
+          </div>
+          <p>
+            A responsive front-end mentor platform that auto-generates bite-sized UI challenges, 
+            tracks your progress with GitHub commits, and deploys your solutions to a shareable 
+            preview URL in seconds.
+          </p>
+          <div class="project-tags">
+            <span class="tag">React</span>
+            <span class="tag">Node.js</span>
+            <span class="tag">GitHub API</span>
+          </div>
+        </div>
+
+        <div class="project-card">
+          <div class="project-header">
+            <h3>📊 ZYSA</h3>
+          </div>
+          <p>
+            Zero-latency YAML stream aggregator that ingests config files from multiple repos, 
+            validates schema in real time, and pushes a unified, deduplicated manifest to 
+            Kubernetes via GitOps—no CI cron needed.
+          </p>
+          <div class="project-tags">
+            <span class="tag">Kubernetes</span>
+            <span class="tag">GitOps</span>
+            <span class="tag">YAML</span>
+          </div>
+        </div>
+
+        <div class="project-card">
+          <div class="project-header">
+            <h3>🔔 SSEN</h3>
+          </div>
+          <p>
+            Server-sent event notifier that turns any SQL database into a live data feed: 
+            one-line webhook setup, JWT auth, and automatic reconnection so your dashboards 
+            update before the query finishes.
+          </p>
+          <div class="project-tags">
+            <span class="tag">SSE</span>
+            <span class="tag">WebSockets</span>
+            <span class="tag">JWT</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section class="contact" id="contact">
+    <div class="container">
+      <h2 class="section-title">Let's <span class="gradient-text">Connect</span></h2>
+      <div class="contact-content">
+        <p>I'm always open to discussing new projects, creative ideas, or opportunities to be part of your vision.</p>
+        <div class="social-links">
+          <a href="mailto:aprelrichards7@gmail.com" class="social-link">
+            <span class="social-icon">📧</span>
+            Email
+          </a>
+          <a href="https://github.com/DerickRichards" class="social-link" target="_blank">
+            <span class="social-icon">💻</span>
+            GitHub
+          </a>
+          <a href="https://linkedin.com/in/DerickRichards" class="social-link" target="_blank">
+            <span class="social-icon">💼</span>
+            LinkedIn
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
   <footer>
-    <p>&copy; 2025 Aprel. Built with ❤️ and GitHub Pages.</p>
+    <p>&copy; 2025 Derick Richards. Crafted with passion and code.</p>
   </footer>
+
+  <script src="script.js"></script>
 </body>
 </html>
