@@ -1,7 +1,3 @@
-// =======================
-// PORTFOLIO MAIN SCRIPT
-// =======================
-
 // Navbar
 const navbar = document.getElementById("navbar");
 
@@ -63,21 +59,50 @@ scrollTopBtn.addEventListener("click", () => {
   window.scrollTo({ top: 0, behavior: "smooth" });
 });
 
-// Dark/Light mode toggle with localStorage
+// Dark/Light mode toggle with localStorage & system preference
 const toggleThemeBtn = document.getElementById("toggleTheme");
-const body = document.body;
+const bodyEl = document.body;
 
-// Load saved theme
-if (localStorage.getItem("theme") === "dark") {
-  body.classList.add("dark-mode");
+function setToggleButtonIcon(isDark) {
+  if (toggleThemeBtn) {
+    toggleThemeBtn.textContent = isDark ? "☀️" : "🌙";
+    toggleThemeBtn.setAttribute("aria-pressed", String(isDark));
+    toggleThemeBtn.setAttribute("aria-label", isDark ? "Switch to light theme" : "Switch to dark theme");
+    toggleThemeBtn.title = isDark ? "Light mode" : "Dark mode";
+  }
 }
 
-// Toggle theme
-toggleThemeBtn.addEventListener("click", () => {
-  body.classList.toggle("dark-mode");
-  if (body.classList.contains("dark-mode")) {
-    localStorage.setItem("theme", "dark");
+function applyTheme(theme) {
+  if (theme === "dark") {
+    bodyEl.classList.add("dark-mode");
+    setToggleButtonIcon(true);
   } else {
-    localStorage.setItem("theme", "light");
+    bodyEl.classList.remove("dark-mode");
+    setToggleButtonIcon(false);
   }
-});
+}
+
+// Determine initial theme:
+// 1. localStorage if available
+// 2. else default to 'dark' mode
+const saved = localStorage.getItem("theme");
+const prefersDark = window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches;
+const initialTheme = saved ? saved : 'dark';
+
+applyTheme(initialTheme); // apply on load
+
+// Toggle handler
+if (toggleThemeBtn) {
+  toggleThemeBtn.addEventListener("click", () => {
+    const isDark = bodyEl.classList.toggle("dark-mode");
+    const newTheme = isDark ? "dark" : "light";
+    localStorage.setItem("theme", newTheme);
+    setToggleButtonIcon(isDark);
+  });
+}
+
+// ensure button has ARIA defaults in case JS loads later
+if (toggleThemeBtn && !toggleThemeBtn.hasAttribute("aria-pressed")) {
+  toggleThemeBtn.setAttribute("aria-pressed", String(bodyEl.classList.contains("dark-mode")));
+  toggleThemeBtn.setAttribute("aria-label", bodyEl.classList.contains("dark-mode") ? "Switch to light theme" : "Switch to dark theme");
+}
