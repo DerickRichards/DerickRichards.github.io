@@ -20,6 +20,15 @@
   --nav-bg: rgba(255,255,255,0.8);
 }
 
+.logo img {
+  height: 40px;
+  width: auto;
+  border-radius: 8px;
+  object-fit: cover;
+  filter: drop-shadow(0 0 2px rgba(0,0,0,0.1));
+}
+
+
 *,
 *::before,
 *::after {
