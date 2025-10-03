@@ -437,6 +437,21 @@ footer {
   color: var(--text-secondary);
 }
 
+/* About Section */
+.about {
+  padding: 4rem 2rem;
+}
+
+.about .container p {
+  font-size: 1.1rem;
+  color: var(--text-secondary);
+  margin-top: 1rem;
+  max-width: 900px;
+  line-height: 1.8;
+  margin-left: auto;
+  margin-right: auto;
+}
+
 /* Responsive */
 @media (max-width: 968px) {
   .hero-content {
@@ -490,16 +505,94 @@ footer {
   }
 }
 
-/* Scroll animations */
 .fade-in {
   opacity: 0;
   transform: translateY(30px);
+  /* animation will run only when .in-view is added */
+}
+
+.skill-card,
+.project-card {
+  opacity: 0;
+  transform: translateY(30px);
+}
+
+.fade-in.in-view,
+.skill-card.in-view,
+.project-card.in-view {
   animation: fadeIn 0.8s ease forwards;
 }
 
+/* Scroll animations */
 @keyframes fadeIn {
   to {
     opacity: 1;
     transform: translateY(0);
   }
+}
+
+.scroll-top {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  display: none;
+  padding: 10px 15px;
+  font-size: 18px;
+  border: none;
+  border-radius: 50%;
+  background: var(--accent-color, #007bff);
+  color: white;
+  cursor: pointer;
+  transition: opacity 0.3s ease;
+  z-index: 1000;
+}
+
+.scroll-top.visible {
+  display: block;
+  opacity: 1;
+}
+
+
+.scroll-top {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  display: none;
+  padding: 10px 15px;
+  font-size: 18px;
+  border: none;
+  border-radius: 50%;
+  background: var(--accent-color, #007bff);
+  color: white;
+  cursor: pointer;
+  transition: opacity 0.3s ease;
+  z-index: 1000;
+}
+
+.scroll-top.visible {
+  display: block;
+  opacity: 1;
+}
+.theme-toggle {
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+  color: var(--text-secondary);
+  transition: color 0.3s ease;
+}
+.theme-toggle:hover {
+  color: var(--text-primary);
+}
+/* Dark Mode */
+body.dark-mode {
+  --bg-primary: #121212;
+  --bg-secondary: #1e1e1e;
+  --bg-card: #2a2a2a;
+  --accent-primary: #bb86fc;
+  --accent-secondary: #03dac6;
+  --text-primary: #ffffff;
+  --text-secondary: #b0b0b0;
+  --gradient-1: linear-gradient(135deg, #bb86fc 0%, #3700b3 100%);
+  --gradient-2: linear-gradient(135deg, #03dac6 0%, #018786 100%);
 }
