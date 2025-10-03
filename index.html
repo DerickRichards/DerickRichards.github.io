@@ -4,33 +4,68 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Derick Richards | Aspiring Full Stack Developer</title>
-    <link rel="stylesheet" href="style.css" />
-    <button id="scrollTopBtn" class="scroll-top">⬆</button>
+
+    <!-- SEO -->
     <meta name="description" content="Derick Richards - Aspiring Full Stack Developer & Android Learner. Exploring HTML, CSS, JavaScript, React, Node.js, PostgreSQL, Kotlin." />
     <meta name="keywords" content="Derick Richards, Full Stack Developer, Android Developer Learner, HTML, CSS, JavaScript, React, Node.js, PostgreSQL, Kotlin, Portfolio" />
     <meta name="author" content="Derick Richards" />
+
+    <!-- Open Graph -->
     <meta property="og:title" content="Derick Richards | Aspiring Full Stack Developer" />
     <meta property="og:description" content="Derick Richards - Aspiring Full Stack Developer & Android Learner. Exploring HTML, CSS, JavaScript, React, Node.js, PostgreSQL, Kotlin." />
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://derickrichards.github.io" />
     <meta property="og:image" content="https://derickrichards.github.io/profile-image.png" />
+
+    <!-- Favicon & Manifest -->
+    <link rel="icon" href="assets/favicon.ico" type="image/x-icon">
+    <link rel="manifest" href="site.webmanifest">
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="style.css" />
+
+    <!-- Schema.org JSON-LD -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": "Derick Richards",
+      "url": "https://derickrichards.github.io",
+      "sameAs": [
+        "https://github.com/DerickRichards",
+        "https://linkedin.com/in/DerickRichards"
+      ],
+      "jobTitle": "Aspiring Full Stack Developer",
+      "worksFor": {
+        "@type": "Organization",
+        "name": "Zydus Lifesciences Ltd"
+      }
+    }
+    </script>
   </head>
   <body>
+    <!-- Background Animation -->
     <div class="bg-animation"></div>
+
+    <!-- Scroll Progress Bar -->
+    <div id="progress-bar"></div>
+
+    <!-- Scroll to Top Button -->
+    <button id="scrollTopBtn" class="scroll-top" aria-label="Scroll to top">⬆</button>
 
     <!-- Navigation -->
     <nav id="navbar">
       <div class="container">
         <a href="#home" class="logo" aria-label="Home">
-          <img src="assets/logo.png" alt="Derick Richards Logo"> 
+          <img src="assets/logo.png" alt="Derick Richards Logo" loading="lazy">
         </a>
         <ul>
-          <li><a href="#about">About</a></li>
+          <li><a href="#about" aria-current="page">About</a></li>
           <li><a href="#skills">Skills</a></li>
           <li><a href="#projects">Projects</a></li>
           <li><a href="#contact">Connect</a></li>
         </ul>
-        <button id="toggleTheme" class="theme-toggle">🌙</button>
+        <button id="toggleTheme" class="theme-toggle" aria-label="Toggle dark mode">🌙</button>
       </div>
     </nav>
 
@@ -155,6 +190,7 @@
       <p>&copy; 2025 Derick Richards. <em>Crafted in Pen and Machine.</em></p>
     </footer>
 
-    <script src="script.js"></script>
+    <!-- Scripts -->
+    <script src="script.js" defer></script>
   </body>
 </html>

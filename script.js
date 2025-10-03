@@ -23,6 +23,20 @@ window.addEventListener("scroll", () => {
   } else {
     navbar.classList.remove("scrolled");
   }
+
+  // Scroll Progress Bar
+  const scrollTop = window.scrollY;
+  const docHeight = document.body.scrollHeight - window.innerHeight;
+  const progress = (scrollTop / docHeight) * 100;
+  document.getElementById("progress-bar").style.width = progress + "%";
+
+  // Scroll-to-Top Button
+  const scrollBtn = document.getElementById("scrollTopBtn");
+  if (scrollTop > 200) {
+    scrollBtn.style.display = "block";
+  } else {
+    scrollBtn.style.display = "none";
+  }
 });
 
 // Intersection Observer for fade-in animations
@@ -44,17 +58,8 @@ document.querySelectorAll(".project-card, .skill-card, .fade-in").forEach(el => 
   observer.observe(el);
 });
 
-// Scroll-to-top button
+// Scroll-to-Top Button functionality
 const scrollTopBtn = document.getElementById("scrollTopBtn");
-
-window.addEventListener("scroll", () => {
-  if (window.scrollY > 300) {
-    scrollTopBtn.classList.add("visible");
-  } else {
-    scrollTopBtn.classList.remove("visible");
-  }
-});
-
 scrollTopBtn.addEventListener("click", () => {
   window.scrollTo({ top: 0, behavior: "smooth" });
 });
@@ -101,7 +106,7 @@ if (toggleThemeBtn) {
   });
 }
 
-// ensure button has ARIA defaults in case JS loads later
+// Ensure button has ARIA defaults in case JS loads later
 if (toggleThemeBtn && !toggleThemeBtn.hasAttribute("aria-pressed")) {
   toggleThemeBtn.setAttribute("aria-pressed", String(bodyEl.classList.contains("dark-mode")));
   toggleThemeBtn.setAttribute("aria-label", bodyEl.classList.contains("dark-mode") ? "Switch to light theme" : "Switch to dark theme");

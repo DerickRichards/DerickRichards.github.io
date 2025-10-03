@@ -56,7 +56,6 @@ nav {
   transition: all 0.3s ease;
 }
 
-/* tweak colors that previously assumed dark background */
 nav a {
   color: var(--text-secondary);
 }
@@ -376,6 +375,7 @@ nav a:hover::after {
   color: var(--accent-primary);
 }
 
+
 /* Contact Section */
 .contact {
   padding: 5rem 2rem;
@@ -450,6 +450,39 @@ footer {
   text-align: center;
 }
 
+/* Progress Bar */
+#progress-bar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 4px;
+  background: linear-gradient(90deg, #00c6ff, #0072ff);
+  width: 0%;
+  z-index: 1000;
+  transition: width 0.25s ease;
+}
+
+/* Scroll-to-Top Button */
+.scroll-top {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  background: #0072ff;
+  color: white;
+  border: none;
+  border-radius: 50%;
+  padding: 12px;
+  cursor: pointer;
+  display: none; /* hidden by default */
+  font-size: 20px;
+  z-index: 1000;
+  transition: background 0.3s;
+}
+
+.scroll-top:hover {
+  background: #0056cc;
+}
+
 /* Responsive */
 @media (max-width: 968px) {
   .hero-content {
@@ -500,6 +533,11 @@ footer {
   /* Add margin to the hero section to prevent overlap */
   .hero {
     padding-top: 80px; /* Adjust this value based on the navbar height */
+  }
+
+  /* Hide logo in mobile view */
+  .logo img {
+    display: none; /* Hide the logo image */
   }
 }
 
@@ -595,4 +633,13 @@ body.dark-mode {
   --gradient-2: linear-gradient(135deg, #00d9ff 0%, #7c3aed 100%);
   --accent-color: var(--accent-primary);
   --nav-bg: rgba(10, 14, 39, 0.95);
+}
+
+.dark-theme {
+  background-color: #111;
+  color: #eee;
+}
+
+.dark-theme a {
+  color: #4da3ff;
 }
